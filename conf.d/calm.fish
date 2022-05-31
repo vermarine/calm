@@ -167,10 +167,10 @@ end && calm_multiline
 set --query calm_color_error || set --global calm_color_error $fish_color_error
 set --query calm_color_toolbox || set --global calm_color_toolbox 800080 # same color as used in bash
 set --query calm_symbol_toolbox || set --global calm_symbol_toolbox ⬢
-set --query calm_symbol_prompt || set --global calm_symbol_prompt ❱
-set --query calm_symbol_git_dirty || set --global calm_symbol_git_dirty •
-set --query calm_symbol_git_ahead || set --global calm_symbol_git_ahead ↑
-set --query calm_symbol_git_behind || set --global calm_symbol_git_behind ↓
+set --query calm_symbol_prompt || set --global calm_symbol_prompt %
+set --query calm_symbol_git_dirty || set --global calm_symbol_git_dirty (set_color brred)"*"(set_color normal)
+set --query calm_symbol_git_ahead || set --global calm_symbol_git_ahead +
+set --query calm_symbol_git_behind || set --global calm_symbol_git_behind -
 set --query calm_multiline || set --global calm_multiline false
 set --query calm_toolbox_show_anonymous || set --global calm_toolbox_show_anonymous false
-set --query calm_pwd_currentdir_only || set --global calm_pwd_currentdir_only false
+set --query calm_pwd_currentdir_only || set --global calm_pwd_currentdir_only true

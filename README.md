@@ -15,62 +15,54 @@ fisher install vermarine/calm
 One prompt symbol to rule them all. [Change it](#configuration).
 
 <pre>
-<b>~</b> ❱ ⎢
+<b>~</b> % ⎢
 </pre>
 
 Show Git branch name and status—prompt repaints asynchronously! ✨
 
 <pre>
-~/p/<b>calm</b> main ❱ touch Solution
-~/p/<b>calm</b> main• ❱ ⎢
+<b>calm</b> main % touch Solution
+<b>calm</b> main<b style="color:red">*</b> % ⎢
 </pre>
 
-> `•` indicates that there are staged, unstaged or untracked files.
+> `*` indicates that there are staged, unstaged or untracked files.
 
 Show how many commits you're ahead and/or behind of your upstream—prompt repaints asynchronously! ✨
 
 <pre>
-~/p/<b>calm</b> main• ↓2 ❱ git commit -am Hotfix
-~/p/<b>calm</b> main ↑1 ↓2 ❱ git pull --rebase && git push
-~/p/<b>calm</b> main ❱ ⎢
+<b>calm</b> main* -2 % git commit -am Hotfix
+<b>calm</b> main +1 -2 % git pull --rebase && git push
+<b>calm</b> main % ⎢
 </pre>
 
 Show `$CMD_DURATION` if > `1` second.
 
 <pre>
-~/p/<b>calm</b> main ❱ git push --quiet
-~/p/<b>calm</b> main 1.1s ❱ ⎢
+<b>calm</b> main % git push --quiet
+<b>calm</b> main 1.1s % ⎢
 </pre>
 
 Show the last `$pipestatus`.
 
 <pre>
-~/p/<b>calm</b> main ❱ false
-~/p/<b>calm</b> main ❱ [<b>1</b>]
-~/p/<b>calm</b> main ❱ true | false | false
-~/p/<b>calm</b> main [<b>0</b>ǀ<b>1</b>ǀ<b>1</b>] ⎢
-</pre>
-
-Truncate `$PWD` segments except for the basename and root of Git repos.
-
-<pre>
-<b>~</b> ❱ projects/calm/
-~/p/<b>calm</b> ❱ functions/share/
-~/p/calm/f/<b>share</b> ❱ ⎢
+<b>calm</b> main % false
+<b>calm</b> main % [<b>1</b>]
+<b>calm</b> main % true | false | false
+<b>calm</b> main [<b>0</b>ǀ<b>1</b>ǀ<b>1</b>] ⎢
 </pre>
 
 Show current bindings mode.
 
 <pre>
-<i>I</i> <b>~</b> ❱ <kbd>Esc</kbd>
-<i>N</i> <b>~</b> ❱ <kbd>R</kbd>
-<i>R</i> <b>~</b> ❱ ⎢
+<i>I</i> <b>~</b> % <kbd>Esc</kbd>
+<i>N</i> <b>~</b> % <kbd>R</kbd>
+<i>R</i> <b>~</b> % ⎢
 </pre>
 
 Show the current [Toolbox] name when operating inside of a [toolbox].
 
 <pre>
-<b style="color:#800080">⬢ devel</b> ~/p/<b>calm</b> ❱ ⎢
+<b style="color:#800080">⬢ devel</b> ~/p/<b>calm</b> % ⎢
 </pre>
 
 We even set the terminal title to `$PWD` and the currently running command for you.
@@ -84,8 +76,8 @@ fish ~/projects/calm
 Blazing fast would be an understatement considering that the [LLVM repo](https://github.com/llvm/llvm-project) has over 375,000 commits!
 
 <pre>
-~/<b>llvm-project</b> main ❱ time fish_prompt
-~/<b>llvm-project</b> main ❱
+<b>llvm-project</b> main % time fish_prompt
+<b>llvm-project</b> main %
 ________________________________________________________
 Executed in   79.00 micros    fish           external
    usr time   71.00 micros   71.00 micros    0.00 micros
@@ -100,10 +92,10 @@ Modify variables using `set --universal` from the command line or `set --global`
 
 | Variable                  | Type   | Description                     | Default |
 | ------------------------- | ------ | ------------------------------- | ------- |
-| `calm_symbol_prompt`      | string | Prompt symbol.                  | ❱       |
-| `calm_symbol_git_dirty`   | string | Dirty repository symbol.        | •       |
-| `calm_symbol_git_ahead`   | string | Ahead of your upstream symbol.  | ↑       |
-| `calm_symbol_git_behind`  | string | Behind of your upstream symbol. | ↓       |
+| `calm_symbol_prompt`      | string | Prompt symbol.                  | %       |
+| `calm_symbol_git_dirty`   | string | Dirty repository symbol.        | *       |
+| `calm_symbol_git_ahead`   | string | Ahead of your upstream symbol.  | +       |
+| `calm_symbol_git_behind`  | string | Behind of your upstream symbol. | -       |
 | `calm_symbol_toolbox`     | string | Inside of a toolbox.            | ⬢       |
 
 ### Colors
